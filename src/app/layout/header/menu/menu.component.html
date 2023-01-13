@@ -1,0 +1,13 @@
+<div class="menu-wrapper">
+  <ul class="menu-wide">
+    <li *ngFor="let menuItem of menuItems">
+      <a [routerLinkActive]="'active'"
+         [routerLink]="[menuItem.link]"
+      >
+        {{menuItem.title}}
+      </a>
+    </li>
+  </ul>
+</div>
+
+

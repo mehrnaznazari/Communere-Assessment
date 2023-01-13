@@ -1,0 +1,66 @@
+<div class="f-wrapper">
+  <div class="header-container">
+    <h1>{{pageTitle}}</h1>
+    <span class="border"></span>
+  </div>
+
+  <form (ngSubmit)="modifyLocationHandler()" [formGroup]="modifyLocationForm" class="form-wrapper">
+    <div class="form-col">
+      <label>
+        <span class="label">Location Name:</span> <span class="required">*</span>
+        <input [ngClass]="{'border-error' :
+                      (modifyLocationForm.controls['locationName'].dirty ||
+                      modifyLocationForm.controls['locationName'].touched) &&
+                      modifyLocationForm.hasError('required', 'locationName')}"
+               autocomplete="off"
+               class="form-control"
+               formControlName="locationName"
+               placeholder="location Name"
+               type="text"
+        >
+      </label>
+    </div>
+    <div class="form-col">
+      <label>
+        <span class="label">Location On Map:</span> <span class="required">*</span>
+      </label>
+      <div class="map-container">
+        <app-leaf-map
+          [options]="mapOptions"
+          (clickedOnMap$)="selectedLocationHandler($event)"
+          id='main-map'
+        ></app-leaf-map>
+      </div>
+    </div>
+
+    <div class="form-col">
+      <label>
+        <span class="label">Location Type:</span> <span class="required">*</span>
+        <select formControlName="locationType">
+          <option [ngValue]="null" disabled>Select</option>
+          <option *ngFor="let item of locationTypeItems" [ngValue]="item.id">{{item.name}}</option>
+        </select>
+      </label>
+    </div>
+
+    <div class="form-col">
+      <label>
+        <span class="label">Upload Logo:</span> <span class="required">*</span>
+        <app-upload-file (fileReadyToUpload)="uploadFile($event)"
+                         [config]="{ allowedExtensions: ['jpeg','jpg','png',],maxFileSize: 1000000}"
+        ></app-upload-file>
+      </label>
+
+    </div>
+
+    <div class="form-col">
+      <button [disabled]="modifyLocationForm.invalid || modifyLocationForm.disabled"
+              class="btn btn-primary"
+              type="submit"
+      >
+        Save Change
+      </button>
+    </div>
+  </form>
+</div>
+

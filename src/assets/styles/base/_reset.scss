@@ -1,0 +1,82 @@
+@import "variables";
+
+* {
+  outline: none !important;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:focus, :active, :enabled {
+  outline: none !important;
+}
+
+ul {
+  padding: 0;
+  margin-bottom: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+p {
+  margin: 0;
+  padding-bottom: 0.25rem;
+}
+
+b {
+  font-weight: bold;
+}
+
+h1, h2, h3, h4 {
+  font-weight: $font-bold;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+h2 {
+  font-size: 1.25rem;
+}
+
+a:hover {
+  outline: 0;
+  text-decoration: none;
+  color: unset;
+}
+
+a {
+  text-decoration: none;
+
+  &:active, &:focus {
+    outline: 0;
+    text-decoration: none;
+  }
+}
+
+button {
+  outline: none;
+  background-color: initial;
+}
+
+.btn {
+  &:focus, &.focus {
+    outline: 0;
+    box-shadow: none !important;
+  }
+}
+
+.clear {
+  clear: both;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+

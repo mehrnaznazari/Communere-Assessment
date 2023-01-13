@@ -1,0 +1,36 @@
+@import "src/assets/styles/base/variables";
+@import "src/assets/styles/base/mixins";
+
+.menu-wrapper {
+  display: flex;
+  align-items: center;
+  height: 100px;
+  padding-left: 35px;
+  position: relative;
+  min-width: 400px;
+}
+
+.menu-wide {
+  height: 100%;
+  display: flex;
+  align-items: center;
+
+  li {
+    margin-right: 30px;
+
+    a {
+      font-weight: $font-bold;
+      color: var(--text);
+
+      &:hover, &.active {
+        border-bottom: 2px solid var(--link);
+        padding-bottom: 15px;
+        color: var(--link);
+      }
+    }
+  }
+}
+
+
+
+

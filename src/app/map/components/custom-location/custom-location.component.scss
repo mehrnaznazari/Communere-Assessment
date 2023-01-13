@@ -1,0 +1,19 @@
+.form {
+  &-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem;
+    max-width: 600px;
+  }
+
+  &-col {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+.map-container {
+  width: 100%;
+  height: 200px;
+}
+

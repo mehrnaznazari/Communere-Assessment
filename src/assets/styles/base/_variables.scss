@@ -1,0 +1,30 @@
+$base-font-family: 'Roboto', sans-serif;
+$base-font-size: 16px;
+$responsive-font-size: 14px;
+
+$font-light: 300;
+$font-regular: 400;
+$font-bold: 700;
+
+$radius-0: 0;
+$radius: 8px;
+$radius-100: 100%;
+
+// sidebar width
+$sidebar-width: 300px;
+$sidebar-width-full: 100vw;
+
+
+$breakpoint-mobile: "only screen and (max-width : 575px)";
+$breakpoint-tablet: "only screen and (min-width: 576px) and (max-width: 767px)";
+$breakpoint-laptop: "only screen and (min-width: 768px)";
+$breakpoint-desktop: "only screen and (max-width: 1024px)";
+$breakpoint-l-desktop: "only screen and (min-width: 992px)";
+$breakpoint-xl-desktop: "only screen and (min-width: 1200px)";
+
+
+$sidebarWidthTransition: .3s;
+@function sidebarTransition($what, $mode ,$time:$sidebarWidthTransition, $delay:0s) {
+  $result: $what $time $delay $mode;
+  @return $result;
+}

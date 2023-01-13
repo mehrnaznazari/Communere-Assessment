@@ -1,0 +1,46 @@
+@import "src/assets/styles/base/variables";
+
+.container {
+  &-logo {
+    flex: 0 0 260px;
+    max-width: 260px;
+  }
+
+  &-menu {
+    flex: 0 0 calc(100% - 260px);
+    max-width: calc(100% - 260px);
+  }
+}
+
+.header {
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0, 3px, 6px, var(--shadow);
+  position: relative;
+  height: 100px;
+  display: flex;
+  align-content: center;
+
+  .logo-wrapper {
+    align-items: center;
+    display: flex;
+    height: 100px;
+
+    .logo {
+      max-width: 100%;
+    }
+  }
+
+
+  @media #{$breakpoint-tablet} {
+    height: 100px;
+    .logo-wrapper {
+      height: 100px;
+
+      .logo {
+        width: 100px;
+      }
+    }
+
+  }
+}
+

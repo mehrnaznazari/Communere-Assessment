@@ -1,0 +1,49 @@
+@import "src/assets/styles/base/variables";
+
+.file-upload {
+  background-color: var(--uploaded-title);
+  border-radius: $radius;
+  margin-top: 1rem;
+  text-align: center;
+  height: 200px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .file-detail {
+    margin-bottom: 0.275rem;
+    color: var(--uploaded-title);
+  }
+}
+
+#uploadItem {
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  opacity: 0;
+  width: auto;
+}
+
+.browse-file {
+  label {
+    text-align: center;
+    width: 110px;
+    height: 40px;
+    margin: 0 auto;
+    padding: 7px 0 !important;
+  }
+}
+
+@media #{$breakpoint-mobile} {
+  .upload-box {
+    .file-upload {
+      height: 135px;
+    }
+  }
+}
+
+.allowedExtensions {
+  font-size: 12px;
+  margin-top: 3px;
+}

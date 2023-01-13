@@ -1,0 +1,31 @@
+<div [style.display]="state.value === 'inactive' ? 'none' : ''" class="ws-toast ws-toast--error">
+  <div class="ws-toast__icon">
+    <ng-container *ngIf="type === toastTypeEnum.Error">
+      <i class="icon-cancel"></i>
+    </ng-container>
+    <ng-container *ngIf="type === toastTypeEnum.Warning">
+      <i class="icon-circle-info"></i>
+    </ng-container>
+    <ng-container *ngIf="type === toastTypeEnum.Success">
+      <i class="icon-check"></i>
+    </ng-container>
+    <ng-container *ngIf="type === toastTypeEnum.Info">
+      <i class="icon-help"></i>
+    </ng-container>
+  </div>
+  <div class="ws-toast__text">
+    <div *ngIf="title" [attr.aria-label]="title" [class]="options.titleClass">
+      {{ title }}
+    </div>
+    <div *ngIf="message && options.enableHtml" [class]="options.messageClass" [innerHTML]="message"
+         aria-live="polite" role="alert">
+    </div>
+    <div *ngIf="message && !options.enableHtml" [attr.aria-label]="message" [class]="options.messageClass"
+         aria-live="polite" role="alert">
+      {{ message }}
+    </div>
+  </div>
+</div>
+<div *ngIf="options.progressBar">
+  <div [style.width]="width + '%'" class="toast-progress"></div>
+</div>

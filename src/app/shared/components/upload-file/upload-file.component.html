@@ -1,0 +1,20 @@
+<div class="file-upload">
+  <div>
+    <div *ngIf="selectedFile" class="file-detail">
+      {{fileToUpload?.name}}
+    </div>
+    <div class="browse-file">
+      <label class="btn btn-gray pointer-event" for="uploadItem">
+        Select File
+      </label>
+      <input
+          #file
+          id="uploadItem"
+          type="file"
+          (change)="uploadFile(file.files)"
+      />
+    </div>
+  </div>
+
+</div>
+<p class="allowedExtensions">allowedExtensions: {{allowedExtensions}}</p><br/>

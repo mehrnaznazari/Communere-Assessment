@@ -1,0 +1,9 @@
+<div class="fs-container">
+  <!--    (map$)="receiveMap($event)"-->
+  <app-leaf-map
+    (zoom$)="receiveZoom($event)"
+    [mapLocation$]="locationServices.locationList$"
+    [options]="mapOptions"
+    id='main-map'
+  ></app-leaf-map>
+</div>

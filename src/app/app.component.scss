@@ -1,0 +1,11 @@
+@import "src/assets/styles/base/variables";
+
+main{
+  margin: 2rem 2rem 0;
+  flex-grow: 1;
+  min-height: calc(100vh - 160px - 0.5rem);
+
+  @media #{$breakpoint-mobile} {
+    margin: 2rem 1rem 0;
+  }
+}

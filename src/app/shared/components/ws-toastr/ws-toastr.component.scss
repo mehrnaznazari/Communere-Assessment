@@ -1,0 +1,62 @@
+@import "src/assets/styles/base/variables";
+@import "src/assets/styles/base/mixins";
+
+::ng-deep {
+  .toast-container {
+    position: absolute;
+    left: 2rem;
+    top: 2rem;
+    .ngx-toastr {
+      box-shadow: 0 2px 16px var(--toast-shadow);
+      padding: 8px 8px 8px 10px;
+      border-radius: $radius;
+      width: 300px;
+
+      &:hover {
+        box-shadow: 0 2px 16px  var(--toast-shadow);
+      }
+    }
+  }
+
+  .toast-container-error {
+    color: var(--toast-error) !important;
+    background-color: var(--toast-icon-error);
+  }
+
+  .toast-container-info {
+    color: var(--toast-info) !important;
+    background-color: var(--toast-icon-info);
+  }
+
+  .toast-container-success {
+    color: var(--toast-success) !important;
+    background-color: var(--toast-icon-success);
+  }
+
+  .toast-container-warning {
+    color: var(--toast-warning) !important;
+    background-color: var(--toast-icon-warning);
+  }
+}
+
+.ws-toast {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+
+  &__icon {
+    display: flex;
+
+    i {
+      font-size: 26px;
+      margin: 0 0.5rem;
+    }
+  }
+
+  &__text {
+    text-align: right;
+    font-size: 14px;
+  }
+}
+
